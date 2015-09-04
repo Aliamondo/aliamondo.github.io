@@ -1,4 +1,5 @@
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
+/* @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic"); */
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic");
 @import url("font-awesome.min.css");
 
 /*
@@ -70,6 +71,40 @@
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
+	}
+	.projectTitle {
+		text-align: center;
+		color: black;
+		font-weight: bold;
+		font-size: 1.2em;
+	}
+	.projectNotes {
+		text-align: center;
+		color: gray;
+		font-size: 0.6em;
+		bottom: 90%;
+	}
+	.row a:link {
+		text-decoration: none;
+		-webkit-transition: all 1s ease; /* Safari and Chrome */
+		transition: all 1s ease;
+	}
+
+	.row a:visited {
+		text-decoration: none;
+	}
+	
+	.row a:hover img{
+		opacity: 0.5;
+		width: 105%;
+		height: 105%;
+		text-decoration: none;
+		-webkit-transition: all 1s ease; /* Safari and Chrome */
+		transition: all 1s ease;
+	}
+	
+	.row a:active {
+		text-decoration: none;
 	}
 
 	.row:after, .row:before {
@@ -750,7 +785,7 @@
 		background-image: url("images/overlay.png"), url("images/bg.jpg");
 		background-repeat: repeat, no-repeat;
 		background-size: auto, 100% 100%;
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: 'Ubuntu Mono', sans-serif;
 		font-weight: 300;
 		color: #777777;
 	}
@@ -767,7 +802,7 @@
 		}
 
 	input, textarea, select {
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: 'Ubuntu Mono', sans-serif;
 		font-weight: 300;
 		color: #777777;
 	}
