@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Aliamondo GitHub page</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Aliamondo">
+	<meta name="description" content="Personal software developer page"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?">
+	<script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+	<script type="text/javascript">
+		
+		function textToEmoji(text) {
+			result = "";
+			
+			for (var i = 0; i < text.length; i++) {
+				c = text.charAt(i);
+				
+				if (c >= 'a' && c <= 'z') {
+					result += ":letter-" + c + ":";
+				} else if (c == ' ') {
+					result += "    ";
+				} else {
+					result += c;
+				}
+			}
+			return result;
+		}
+		
+		function convert() {
+			text = document.getElementById('text').value;
+			resultField = document.getElementById('result');
+			resultField.innerHTML = textToEmoji(text.toLowerCase());
+		}
+		
+		function selectResult() {
+			resultField = document.getElementById('result');
+			copyStatus = document.getElementById('copyStatus');
+			
+			window.getSelection().selectAllChildren(resultField);
+			
+			document.execCommand("copy");
+			copyStatus.innerText = "Result (copied to clipboard)";
+		}
+		
+		function resetCopyStatus() {
+			copyStatus = document.getElementById('copyStatus');
+			copyStatus.innerText = "Result";
+		}
+		
+	</script>
+</head>
+<body>
+	
+	<header>
+		<div class="logo">
+			<a href="index.html"><img src="img/logo.png" title="Aliamondo" alt="Aliamondo"/></a>
+		</div><!-- end logo -->
+
+		<div id="menu_icon"></div>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="shakespeare.html">Shakespeare</a></li>
+				<li><a href="https://soundcloud.com/aliamondo">Soundcloud</a></li>
+				<li><a href="about.html" class="selected">About</a></li>
+			</ul>
+		</nav><!-- end navigation menu -->
+
+		<div class="footer clearfix">
+			<!--<ul class="social clearfix">
+				<li><a href="#" class="fb" data-title="Facebook"></a></li>
+				<li><a href="#" class="google" data-title="Google +"></a></li>
+				<li><a href="#" class="behance" data-title="Behance"></a></li>
+				<!--<li><a href="#" class="twitter" data-title="Twitter"></a></li>
+				<li><a href="#" class="dribble" data-title="Dribble"></a></li>--
+				<li><a href="#" class="rss" data-title="RSS"></a></li>
+			</ul><!-- end social -->
+
+			<div class="rights">
+				<p>Copyright © 2013-2018 Aliamondo.</p>
+				<p>Template by <a href="http://pixelhint.com">Pixelhint.com</a></p>
+			</div><!-- end rights -->
+		</div ><!-- end footer -->
+	</header><!-- end header -->
+
+	<section class="main clearfix">
+		
+		<section class="top" style="background: url('img/iTeforTitle.png') no-repeat;">	
+			<div class="wrapper content_header clearfix">
+				<div class="work_nav">
+							
+					<ul class="btn clearfix">
+						<li><a href="thesisMSc.html" class="previous" data-title="Next"></a></li>
+						<li><a href="index.html" class="grid" data-title="Portfolio"></a></li>
+						<li><a href="#" class="next" data-title="Next"></a></li>
+					</ul>
+					
+				</div><!-- end work_nav -->
+				<h1 class="title">Text to emoji</h1>
+			</div>
+		</section><!-- end top -->
+		
+		<section class="wrapper">
+			<div class="content">
+				<form>
+					<table width="50%">
+						<tr>
+							<td><strong>Text</strong></td>
+							<td><input type="text" id="text" value="" onClick="resetCopyStatus();" onKeyUp="convert();" /></td>
+						</tr>
+					</table>
+					<strong><br/><span id="copyStatus">Result</span></strong>
+					<br/><br/>
+					<pre id="result" onClick="selectResult();" />
+				</form>
+			</div><!-- end content -->
+		</section>
+	</section><!-- end main/map -->
+	
+</body>
+</html>
