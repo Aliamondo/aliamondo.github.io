@@ -297,6 +297,7 @@ h5, h6          { font-weight: bolder }
     float: left;
     position: relative;
     overflow: hidden;
+    max-width: 30em;
 }
 
 .main .work .media{
